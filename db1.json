@@ -1,0 +1,17 @@
+{
+  "Studentdata": [
+    {
+      "id": 1,
+      "firstname": "Harsh",
+      "lastname": "Shah",
+      "address": "khanpur",
+      "gender": "male",
+      "state": "gujrat",
+      "city": "ahmedabad",
+      "pincode": 380001,
+      "course": "mscit",
+      "emailid": "harsh2108@gmail.com",
+      "password": "harsh123"
+    }
+  ]
+}
