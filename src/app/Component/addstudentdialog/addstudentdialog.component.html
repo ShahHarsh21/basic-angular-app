@@ -1,0 +1,64 @@
+<h1 mat-dialog-title>Student Form</h1>
+<div mat-dialog-content>
+    <form [formGroup]="student">
+        <mat-form-field appearance="outline">
+            <mat-label>First Name</mat-label>
+            <input formControlName="firstname" matInput placeholder="First Name">
+        </mat-form-field>
+        
+        <mat-form-field appearance="outline">
+            <mat-label>Last Name</mat-label>
+            <input formControlName="lastname" matInput placeholder="last Name">
+        </mat-form-field> 
+
+        <mat-form-field appearance="outline">
+            <mat-label>Address</mat-label>
+            <textarea formControlName="address" matInput placeholder="Adress"></textarea>
+        </mat-form-field>
+        <br>
+
+        
+            <mat-label>Gender</mat-label>
+            <mat-radio-group   formControlName="gender">
+                <mat-radio-button value="male">Male</mat-radio-button>
+                <mat-radio-button value="female">Female</mat-radio-button>
+                <mat-radio-button value="other">Other</mat-radio-button>
+            </mat-radio-group>
+        
+        <mat-form-field appearance="outline">
+            <mat-label>City</mat-label>
+            <input formControlName="city" matInput placeholder="City">
+        </mat-form-field> 
+
+        <mat-form-field appearance="outline">
+            <mat-label>State</mat-label>
+            <input formControlName="state" matInput placeholder="State">
+        </mat-form-field> 
+
+        <mat-form-field appearance="outline">
+            <mat-label>PinCode</mat-label>
+            <input formControlName="pincode" matInput placeholder="pincode">
+        </mat-form-field> 
+
+        <mat-form-field appearance="outline">
+            <mat-label>Course</mat-label>
+            <input formControlName="course" matInput placeholder="Course">
+        </mat-form-field> 
+
+        <mat-form-field appearance="outline">
+            <mat-label>EmailId</mat-label>
+            <input formControlName="emailid" matInput placeholder="EmailId">
+        </mat-form-field> 
+
+        <mat-form-field appearance="outline">
+            <mat-label>PassWord</mat-label>
+            <input formControlName="password" matInput placeholder="password">
+        </mat-form-field> 
+
+   </form>
+</div>
+<div mat-dialog-actions [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+    <button style="margin-left: 10px;" mat-raised-button color="primary" (click) ="onStudentAdd()"  mat-dialog-close>{{actionBtn}}</button>
+
+</div>

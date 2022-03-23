@@ -19,21 +19,22 @@ export class StudentserviceService {
     let x = new HttpHeaders().set(environment.header,environment.value);
     return this._http.get(this.url+id);
   }
-  deleteUser(id: number)
+  deleteStudet(id: number)
    {
     let x = new HttpHeaders().set(environment.header,environment.value);
     return this._http.delete(this.url + id ,{headers:x});
   }
-  addUser(item:student)
+  addStudent(item:student)
   {
     const body = JSON.stringify(item);
     const head = new HttpHeaders().set(environment.header, environment.value);
     return this._http.post(this.url, body, { headers: head });
   }
-  updateUser(item:student)
+  updateStudent(item:student,id:any)
   {
+    //console.log(item.id);
     const body = JSON.stringify(item);
     const head = new HttpHeaders().set(environment.header, environment.value);
-    return this._http.put(this.url+item.id, body, { headers: head });
+    return this._http.put(this.url+id, body, { headers: head });
   }
 }

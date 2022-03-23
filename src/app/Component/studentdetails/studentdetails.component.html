@@ -3,7 +3,7 @@
 </mat-form-field>
 
 <div class="mat-elevation-z8 ">
-      <button mat-raised-button class="mybtn" id="Add Record" (click)="onAddClick()"   color="primary" aria-label="ADD USER">
+      <button mat-raised-button class="mybtn" id="Add Record" (click)="onAddClickOpenDialog()"   color="primary" aria-label="ADD USER">
       <mat-icon >add</mat-icon>Registration
       </button>
   <hr>
@@ -30,12 +30,12 @@
               <mat-icon>delete</mat-icon>
             </button> 
 
-            <button mat-icon-button color="primary" (click)="onEdit(row)">
+            <button mat-icon-button color="primary" (click)="onEditClickOpenDialog(row)">
               <mat-icon>edit</mat-icon>
             </button> 
             
-            <button (click)="onViewMore(row)" mat-icon-button  color="primary" aria-label="Example icon-button with a heart icon">
-              <i class="material-icons">subject</i>
+            <button (click)="onViewClickOpenDialog(row)" mat-icon-button  aria-label="Example icon-button with a heart icon">
+              <mat-icon>visibility</mat-icon>
               </button>
           </td>
         </ng-container>

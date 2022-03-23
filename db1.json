@@ -1,7 +1,6 @@
 {
   "Studentdata": [
     {
-      "id": 1,
       "firstname": "Harsh",
       "lastname": "Shah",
       "address": "khanpur",
@@ -9,9 +8,36 @@
       "state": "gujrat",
       "city": "ahmedabad",
       "pincode": 380001,
-      "course": "mscit",
+      "course": "msc",
       "emailid": "harsh2108@gmail.com",
-      "password": "harsh123"
+      "password": "harsh123",
+      "id": 1
+    },
+    {
+      "firstname": "Harshkumar Kaushik",
+      "lastname": "shah",
+      "address": "2/FF Dhavalgiri Flat, khanpur",
+      "gender": "male",
+      "state": "Gujarat",
+      "city": "Ahmedabad",
+      "pincode": "380001",
+      "course": "bcom",
+      "emailid": "harshshah942737@gmail.com",
+      "password": "123",
+      "id": 11
+    },
+    {
+      "firstname": "poooja",
+      "lastname": "Shah",
+      "address": "ushamanpura",
+      "gender": "female",
+      "state": "ahmedabad",
+      "city": "ushmanpura",
+      "pincode": "380015",
+      "course": "msciy",
+      "emailid": "pooja@gmail.com",
+      "password": "123",
+      "id": 25
     }
   ]
 }
