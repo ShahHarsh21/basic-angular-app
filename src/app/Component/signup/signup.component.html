@@ -1,0 +1,50 @@
+<section class="vh-100" style="background-color: #508bfc;">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card shadow-2-strong" style="border-radius: 1rem;">
+            <div class="card-body p-5 text-center">
+              
+              <form [formGroup]="signupform" (ngSubmit)="onsignup()">
+                <h1 class="mb-5">Sign Up</h1>
+
+                <div class="form-outline mb-4" appearance="outline">
+                    <input type="text"  formControlName="firstname" class="form-control form-control-lg" placeholder="FirstName">
+                    <span class="text-danger" style="align-items:left ;" *ngIf="signupform.controls['firstname'].dirty && signupform.hasError('required','firstname')" > *Please enter your Name !</span>
+                  <span class="text-danger" style="align-items:left ;" *ngIf="signupform.controls['firstname'].dirty && signupform.hasError('minLength','firstname')" > *Please your Name should be Minimam 5 Character  !</span>
+                </div>
+
+                <div class="form-outline mb-4" appearance="outline">
+                    <input type="text"  formControlName="course" class="form-control form-control-lg" placeholder="Course"/>
+                    <span class="text-danger" style="align-items:left ;" *ngIf="signupform.controls['course'].dirty && signupform.hasError('required','course')" > *Please enter your Course !</span>
+                </div>
+
+                <div class="form-outline mb-4" appearance="outline">
+                  <input type="text"  formControlName="emailid" class="form-control form-control-lg" placeholder="Email_Id"/>
+                  <span class="text-danger" style="align-items:left ;" *ngIf="signupform.controls['emailid'].dirty && signupform.hasError('required','emailid')" > *Please enter your Email !</span>
+                  <span class="text-danger" style="align-items:left ;" *ngIf="signupform.controls['emailid'].dirty && signupform.hasError('email','emailid')" > *Please enter your Email !</span>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="password"  formControlName="password" class="form-control form-control-lg" placeholder="Password"/>
+                  <span class="text-danger" style="align-items:left ;" *ngIf="signupform.controls['password'].dirty && signupform.hasError('required','password')" > *Please enter your Password !</span>
+                  <span class="text-danger" style="align-items:left ;" *ngIf="signupform.controls['password'].dirty && signupform.hasError('pattern','password')" > *Please enter your Password should be 8 to 15 Character !</span>
+                </div>
+
+                <hr class="my-4">
+                <button class="btn btn-primary btn-lg btn-block"  [disabled]="!signupform.valid" style="width:40%;" type="submit">Submit</button>
+
+              </form>
+
+
+  
+              
+  
+              
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

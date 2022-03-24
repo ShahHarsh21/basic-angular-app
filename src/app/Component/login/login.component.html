@@ -1,0 +1,85 @@
+<!-- <div class="container">
+
+    <form [formGroup]="loginForm" (ngSubmit)="onlogin()">
+      <h1 class="hh">Login</h1>
+        <div class="imgcontainer">
+         <img  src="" alt="Avatar" class="avatar">
+        </div>
+        <div class="container">
+       <mat-form-field>
+          <label><b>ENTER EMAIL</b></label>
+          <input matInput formControlName="email_id" type="text" ><mat-icon matPrefix>mail</mat-icon>
+          <mat-label *ngIf="loginForm.get('email_id').hasError('required') && !loginForm.get('email_id').pristine ">Email
+            should not be empty</mat-label>
+          <mat-label *ngIf="loginForm.get('email_id').hasError('email') && !loginForm.get('email_id').pristine ">Invalid
+            Email</mat-label>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <label ><b>Password</b></label>
+          <input type="password" matInput formControlName="password"><i class="material-icons">remove_red_eye</i>
+          <mat-label *ngIf="loginForm.get('password').hasError('required') && !loginForm.get('password').pristine ">Email
+            should not be empty</mat-label>
+        </mat-form-field>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg" >Login</button>
+      </form>
+    </div> -->
+
+
+    <section class="vh-100" style="background-color: #508bfc;">
+      <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+            <div class="card shadow-2-strong" style="border-radius: 1rem;">
+              <div class="card-body p-5 text-center">
+                
+                <form [formGroup]="loginForm" (ngSubmit)="onlogin()">
+                  <h1 class="mb-5">Log In</h1>
+                  <div class="form-outline mb-4" appearance="outline">
+                    <input type="email" formControlName="emailid" class="form-control form-control-lg" placeholder="Enter Email_Id">
+                    <span class="text-danger" style="align-items:left ;" *ngIf="loginForm.controls['emailid'].dirty && loginForm.hasError('required','emailid')" > *Please enter your Email !</span>
+                    <span class="text-danger" style="align-items:left ;" *ngIf="loginForm.controls['emailid'].dirty && loginForm.hasError('email','emailid')" > *Please enter your Email !</span>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input type="password"  formControlName="password" class="form-control form-control-lg" placeholder="Password">
+                    <span class="text-danger" style="align-items:left ;" *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required','password')" > *Please enter your Password !</span>
+                    <span class="text-danger" style="align-items:left ;" *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('pattern','password')" > *Please enter your Password should be 8 to 15 Character !</span>
+
+                  </div>
+                  
+                  <button class="btn btn-primary btn-lg btn-block" [disabled]="!loginForm.valid" type="submit">Login</button>
+                  <hr class="my-4">
+                  <a routerLink="/signup">New User? Click to SignUp</a>
+                  <!-- <button class="btn btn-lg btn-block btn-primary mb-2" style="background-color: #3b5998;" routerLink="/signup">Sign Up</button> -->
+                </form>
+
+  
+    
+                
+    
+                <!-- Checkbox -->
+                <!-- <div class="form-check d-flex justify-content-start mb-4">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="form1Example3"
+                  />
+                  <label class="form-check-label" for="form1Example3"> Remember password </label>
+                </div> -->
+    
+               
+    
+                
+    
+                <!-- <button class="btn btn-lg btn-block btn-primary" style="background-color: #dd4b39;" type="submit"><i class="fab fa-google me-2"></i> Sign in with google</button>
+                <button class="btn btn-lg btn-block btn-primary mb-2" style="background-color: #3b5998;" type="submit"><i class="fab fa-facebook-f me-2"></i>Sign in with facebook</button> -->
+    
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>

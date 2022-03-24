@@ -20,6 +20,8 @@ import { NavbarComponent } from './Component/navbar/navbar.component';
 import { StudentdetailsComponent } from './Component/studentdetails/studentdetails.component';
 import { AddstudentdialogComponent } from './Component/addstudentdialog/addstudentdialog.component';
 import { ViewstudentdialogComponent } from './Component/viewstudentdialog/viewstudentdialog.component';
+import { LoginComponent } from './Component/login/login.component';
+import { SignupComponent } from './Component/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { ViewstudentdialogComponent } from './Component/viewstudentdialog/viewst
     NavbarComponent,
     StudentdetailsComponent,
     AddstudentdialogComponent,
-    ViewstudentdialogComponent
+    ViewstudentdialogComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

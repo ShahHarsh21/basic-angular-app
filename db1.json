@@ -38,6 +38,32 @@
       "emailid": "pooja@gmail.com",
       "password": "123",
       "id": 25
+    },
+    {
+      "firstname": "hetvi",
+      "lastname": null,
+      "address": null,
+      "gender": null,
+      "state": null,
+      "city": null,
+      "pincode": null,
+      "course": "mcom",
+      "emailid": "hetvi@gmail.com",
+      "password": "hetvi123",
+      "id": 26
+    },
+    {
+      "firstname": "aaaaa",
+      "lastname": null,
+      "address": null,
+      "gender": null,
+      "state": null,
+      "city": null,
+      "pincode": null,
+      "course": "pppp",
+      "emailid": "a@gmail.com",
+      "password": "12345678",
+      "id": 27
     }
   ]
 }

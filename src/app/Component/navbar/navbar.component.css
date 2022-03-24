@@ -1,0 +1,62 @@
+.header {
+    /* background: inherit; */
+    background-color:green;
+    color:white;
+    font-size: 50px;
+    height: 70px;
+  }
+  h1{
+    padding-top: 1%;
+    margin-left: 5%;
+    font-size:40px;
+    font-family:"Sofia", sans-serif;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px;
+  }
+  .fa-3{
+    padding-top: 10px;
+    font-size: 5em;
+    margin-left: 30%;
+  }
+  p{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  input{
+    width: 80%;
+    margin-top: 5%;
+    margin-left: 5%;
+    border: 1px solid black;
+  }
+  .modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 42%;
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: .3rem;
+    outline: 0;
+  }
+  
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1055;
+    display: none;
+    width: 179%;
+    height: 106%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    outline: 0;
+    margin-top: 3%;
+    margin-left: 9%;
+  }
+  
+  
+  
+  
