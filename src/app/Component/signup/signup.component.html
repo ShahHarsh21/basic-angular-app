@@ -3,11 +3,12 @@
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-12 col-md-8 col-lg-6 col-xl-5">
           <div class="card shadow-2-strong" style="border-radius: 1rem;">
+            <a routerLink="/" style="margin-left: 90%; margin-top: 3%; color: black; font-size:large;">X</a>
+            
             <div class="card-body p-5 text-center">
-              
               <form [formGroup]="signupform" (ngSubmit)="onsignup()">
                 <h1 class="mb-5">Sign Up</h1>
-
+                
                 <div class="form-outline mb-4" appearance="outline">
                     <input type="text"  formControlName="firstname" class="form-control form-control-lg" placeholder="FirstName">
                     <span class="text-danger" style="align-items:left ;" *ngIf="signupform.controls['firstname'].dirty && signupform.hasError('required','firstname')" > *Please enter your Name !</span>
