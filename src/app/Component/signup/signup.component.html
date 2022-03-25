@@ -12,7 +12,7 @@
                 <div class="form-outline mb-4" appearance="outline">
                     <input type="text"  formControlName="firstname" class="form-control form-control-lg" placeholder="FirstName">
                     <span class="text-danger" style="align-items:left ;" *ngIf="signupform.controls['firstname'].dirty && signupform.hasError('required','firstname')" > *Please enter your Name !</span>
-                  <span class="text-danger" style="align-items:left ;" *ngIf="signupform.controls['firstname'].dirty && signupform.hasError('minLength','firstname')" > *Please your Name should be Minimam 5 Character  !</span>
+                    <span class="text-danger" style="align-items:left ;" *ngIf="signupform.controls['firstname'].dirty && signupform.hasError('minLength','firstname')" > *Please your Name should be Minimam 5 Character  !</span>
                 </div>
 
                 <div class="form-outline mb-4" appearance="outline">

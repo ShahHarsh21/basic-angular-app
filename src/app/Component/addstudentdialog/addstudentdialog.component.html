@@ -5,6 +5,8 @@
             <mat-label>First Name</mat-label>
             <input formControlName="firstname" matInput placeholder="First Name">
         </mat-form-field>
+        <span class="text-danger" style="align-items:left ;" *ngIf="student.controls['firstname'].dirty && student.hasError('required','firstname')" > *Please enter your Name !</span>
+            <span class="text-danger" style="align-items:left ;" *ngIf="student.controls['firstname'].dirty && student.hasError('minLength','firstname')" > *Please your Name should be Minimam 5 Character  !</span>
         
         <mat-form-field appearance="outline">
             <mat-label>Last Name</mat-label>
@@ -44,21 +46,26 @@
             <mat-label>Course</mat-label>
             <input formControlName="course" matInput placeholder="Course">
         </mat-form-field> 
+        <span class="text-danger" style="align-items:left ;" *ngIf="student.controls['course'].dirty && student.hasError('required','course')" > *Please enter your Course !</span>
 
         <mat-form-field appearance="outline">
             <mat-label>EmailId</mat-label>
             <input formControlName="emailid" matInput placeholder="EmailId">
         </mat-form-field> 
+        <span class="text-danger" style="align-items:left ;" *ngIf="student.controls['emailid'].dirty && student.hasError('required','emailid')" > *Please enter your Email !</span>
+        <span class="text-danger" style="align-items:left ;" *ngIf="student.controls['emailid'].dirty && student.hasError('email','emailid')" > *Please enter your Email !</span>
 
         <mat-form-field appearance="outline">
             <mat-label>PassWord</mat-label>
             <input formControlName="password" matInput placeholder="password">
         </mat-form-field> 
+        <span class="text-danger" style="align-items:left ;" *ngIf="student.controls['password'].dirty && student.hasError('required','password')" > *Please enter your Password !</span>
+        <span class="text-danger" style="align-items:left ;" *ngIf="student.controls['password'].dirty && student.hasError('pattern','password')" > *Please enter your Password should be 8 to 15 Character !</span>
 
    </form>
 </div>
 <div mat-dialog-actions [align]="'end'">
     <button mat-raised-button color="warn" mat-dialog-close>Close</button>
-    <button style="margin-left: 10px;" mat-raised-button color="primary" (click) ="onStudentAdd()"  mat-dialog-close>{{actionBtn}}</button>
+    <button style="margin-left: 10px;" mat-raised-button color="primary" [disabled]="!student.valid" (click) ="onStudentAdd()"  mat-dialog-close>{{actionBtn}}</button>
 
 </div>

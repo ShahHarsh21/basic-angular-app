@@ -19,17 +19,17 @@ export class AddstudentdialogComponent implements OnInit {
   constructor(private formBuilder : FormBuilder,private _data:StudentserviceService,private _router:Router,private dialog : MatDialog,@Inject(MAT_DIALOG_DATA) public editData :any) { }
 
   ngOnInit(): void {
-    this.student = this.formBuilder.group({
-      firstname : [],
-      lastname : [],
-      address : [],
-      gender : [],
-      state : [],
-      city : [],
-      pincode : [],
-      course : [],
-      emailid : [],
-      password : []
+    this.student = new FormGroup({
+      firstname : new FormControl('',[Validators.required,Validators.minLength(5)]),
+      lastname : new FormControl(),
+      address : new FormControl(),
+      gender :new FormControl (),
+      state :new FormControl (),
+      city : new FormControl(),
+      pincode :new FormControl (),
+      course : new FormControl('',[Validators.required]),
+      emailid:new FormControl('',[Validators.required,Validators.email]),
+      password:new FormControl('',[Validators.required,Validators.pattern("^[a-z0-9]{8,15}$")])
     });
 
     if(this.editData){
