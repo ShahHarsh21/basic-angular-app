@@ -1,0 +1,101 @@
+
+--- DO THESE FROM "\mongodb\bin" ---
+>net start MongoDB  (DO ONCE)<!-- STARTS THE MongoDB SERVICE>
+
+>mongo                       <!-- RUNS THE MongoDB SHELL>
+
+--- COMMANDS TO USE ONCE INSIDE THE SHELL ---
+
+	>> CRUD OPERATIONS
+
+		--CREATE--
+
+>show dbs					 <!-- SHOWS ALL DATABASES>
+
+>db						 <!-- TELLS YOU CURRENT DB>
+
+>use dbname 				 <!-- SWITCHES(AND CREATES if it doesn't exist) CURRENT DB TO "dbname">
+
+>db.createUser({            <!-- CREATES A USER IN CURRENT DB>
+	 user: "abc",
+	 pwd:"1234",
+	 roles: ["readWrite, "dbAdmin"]
+		}); 
+		
+>show collections          <!-- SHOWS ALL COLLECTIONS IN CURRENT DB>
+
+>db.createCollection('collectionname');      <!-- CREATES A COLLECTION "collectionname" IN CURRENT DB>
+
+		--READ--
+		
+>db.collectionname.find();              <!-- SHOWS ALL THE DOCUMENTS IN THE COLLECTION "collectionname"> 
+
+	>db.collectionname.find().pretty();      	<!-- HELPER FUNCTION FOR BETTER READABILITY>
+
+	>db.collectionname.find({f_name:"abc"});    <!-- FETCH DOCUMENT WITH ONE RESULT>		
+	
+	>db.collectionname.find({gender:"male"}); 	<!-- FETCH DOCUMENTS WITH MULTIPLE RESULTS>
+
+	>db.collectionname.find({$or:[{f_name:"abc"},{f_name:"pqr"}]}); 	<!-- FETCH DOCUMENTS with either of the two parameters matching>
+	>db.collectionname.find({$and: [{f_name:"abc"},{l_name:"lmn"}]}); 	<!-- FETCH DOCUMENTS with both the parameters matching>
+	
+	>db.collectionname.find({age:{$lt:40}});    <!-- FETCHES ALL DOCUMENTS WITH age less than 40>	
+	>db.collectionname.find({age:{$gt:40}});    <!-- FETCHES ALL DOCUMENTS WITH age greater than 40>
+	
+	>db.collectionname.find({age:{$lte:40}});	<!-- FETCHES ALL DOCUMENTS WITH age less than or equal to 40>
+	>db.collectionname.find({age:{$gte:40}});	<!-- FETCHES ALL DOCUMENTS WITH age greater than or equal to 40>
+	
+	>db.collectionname.find({"address.city":"Boston"});  <!-- FETCH DATA from OBJECT address>
+	
+	>db.collectionname.find({memberships:"mem1"});  <!-- FETCH DATA from ARRAY memberships>
+	
+	>SORTING>	
+	>db.collectionname.find().sort({f_name:1});  <!-- SORT BY f_name, ASCENDING(1 for ascending>
+	>db.collectionname.find().sort({f_name:-1});  <!-- SORT BY f_name, DESCENDING(-1 for descending>
+	
+	>db.collectionname.find().count();  <!-- COUNTS ALL DOCUMENTS IN COLLECTION>
+	>db.collectionname.find({gender:"male"}).count(); <!-- COUNTS DOCUMENTS matching field(gender=male)>
+	
+	>db.collectionname.find().limit(4);  <!-- LIMITS RESULTS TO FIRST 4 ENTRIES>
+	
+	>FUNCTIONS>
+	>db.collectionname.find().forEach(function(doc){print("Customer Name:"+ doc.f_name)}); <!-- USE ITERATOR LOOP TO PRINT using a FUNCTION>
+	
+	
+		--ADD / UPDATE--
+		
+>db.collectionname.insert({});
+
+	>db.collectionname.insert({f_name:"abc", l_name:"pqr"});    <!-- INSERTS DATA INTO "collectionname">
+
+	>db.collectionname.insert([{f_name:"", l_name:""}, 			<!-- TO INSERT MULTIPLE DOCUMENTS AT ONCE, USE ARRAYS[]>  
+						  {f_name:"", l_name:""}]);         
+						  
+	>db.collectionname.insert([{f_name:"",l_name:""},{f_name:"",l_name:"", gender:""}]); <!-- CAN ADD FIELDS TO JUST ONE ENTRY>
+
+
+
+>db.collectionname.update({matcher}, {updated data}); 		    <!-- 1ST PARAMETER IS THE FIELD TO MATCH, 2ND IS THE UPDATED DATA>		
+	
+	>db.collectionname.update({matcher_doesn't_exit}, {f_name:"", l_name:"", }, {upsert: true});  <!-- ADD IF IT DOESN'T EXIST using "{upsert: true}">
+	
+	>db.collectionname.update({f_name:""}, {f_name:"", l_name:"", gender:""}); 	<!-- UPDATES DATA USING THE f_name matcher>
+	
+	>db.collectionname.update({f_name:"abc"},{$set:{age:30}});    <!-- SETS ONE FIELD (age = 30)>
+	
+	>db.collectionname.update({f_name:"abc"},{$inc:{age: 5}});    <!-- INCREMENTS FIELD (age by 5)>
+	
+	>db.collectionname.update({f_name:"abc"},{$unset:{age:30}});  <!-- UNSET ONE FIELD (unset age)>
+	
+	>db.collectionname.update({f_name:"abc"}, {$rename:{"age":"newage"}}); <!-- RENAMES FIELD (age to newage)>
+	
+	
+		--DELETE--
+	
+>db.collectionname.remove({matcher});  <!-- DELETES ALL DOCUMENTS matching the specified matcher>
+
+	>db.collectionname.remove({matcher}, {justOne:true});   <!-- DELETES THE FIRST DOCUMENT matching the specified matcher>
+	
+
+	
+	
